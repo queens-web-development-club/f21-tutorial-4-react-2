@@ -1,0 +1,77 @@
+/* Importing external source for fonts allows you to use custom fonts. Learn more: */
+/* https://fonts.google.com/ */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+/* Universal selector to style all text */
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* I am using flex to easily format. Learn more: */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/flex */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5em;
+  background:#161b33;
+  color:#faeffc;
+}
+.todo-container {
+  display: flex;
+}
+.list-container{
+  min-width: 500px;
+}
+/* Since this is a simple app with only 1 of each type of selector, I am referencing it
+that way instead of using classes */
+form {
+  display: flex;
+  flex-direction: column;
+  margin-right: 1em;
+}
+label,
+h1 {
+  font-weight: bold;
+  font-size: 26px;
+  margin: 1em;
+  margin-bottom: 0.5em;
+}
+input {
+  margin: 1em 2em;
+  margin-bottom: 0;
+  border-radius: 5px;
+  border: none;
+  height: 1.5em;
+  word-wrap: break-word
+}
+button {
+  margin: 2em;
+  padding: 0.5em;
+  border-radius: 5px;
+  border: none;
+  background-color: #505281;
+  color:#faeffc;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: all 500ms ease-in-out;
+}
+/* Selector allowing you to change the style upon hover. Learn more:*/
+/* https://www.w3schools.com/cssref/sel_hover.asp */
+button:hover {
+  background-color: #686aa5;
+  letter-spacing: 2px;
+}
+li {
+  margin-left: 2em;
+  margin-bottom:.5em;
+}
+
+/* Toggle styles of todos depending on completion status; conditional rendering */
+.complete {
+  text-decoration: line-through;
+  color: rgb(110, 107, 109);
+}
+.incomplete {
+  text-decoration: none;
+}
