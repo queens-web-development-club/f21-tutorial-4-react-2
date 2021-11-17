@@ -28,4 +28,3 @@ function Task ({ task }) {
 
 // Must export function to be able to use it in other components
 export default Task
-

@@ -2,10 +2,17 @@
 import React, { useState } from 'react'
 // Importing task component. The ./ means to look in the same file level and for js files, the extension is not necessary
 import Task from './task'
+// Import uuid library
+const { v4: uuidv4 } = require('uuid')
 
 function Form () {
   // Keeps track of all the tasks in an array of strings, with some default tasks
-  const [tasks, updateTasks] = useState(['Walk the dog', 'Feed the cat'])
+  // const [tasks, updateTasks] = useState(['Walk the dog', 'Feed the cat'])
+  // Update to include ids:
+  const [tasks, updateTasks] = useState([
+    { id: uuidv4(), task: 'Walk the dog' },
+    { id: uuidv4(), task: 'Feed the cat' }
+  ])
   // Keeps track of the input, with the default being an empty string
   const [input, updateInput] = useState('')
 
@@ -41,8 +48,8 @@ function Form () {
         <h1>To Do List:</h1>
         {/* Maps over every element in the tasks array. 
         For each task, we will render a Task component with the contents of the task passed in as props*/}
-        {tasks.map(task => {
-          return <Task task={task} />
+        {tasks.map(taskInState => {
+          return <Task task={taskInState.task} key={taskInState.id} />
         })}
       </div>
     </div>
